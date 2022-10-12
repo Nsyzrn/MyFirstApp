@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="user_name">Name</string>
+    <string name="date">Birth Date</string>
+    <string name="address">Address</string>
+    <string name="phone_no">Phone Number</string>
+
+</resources>

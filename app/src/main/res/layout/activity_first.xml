@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FirstActivity">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Your Name"
+        android:inputType="text"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Your Birth Date"
+        android:textSize="19sp"
+        />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#d4d4d4"
+        android:hint="Select Date"
+        android:padding="15dp"
+        android:textColor="#895737"
+        android:textColorHint="#895737"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:hint="Your Address"
+         />
+
+    <EditText
+        android:id="@+id/phoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:hint="Your Phone Number" />
+
+    <Button
+        android:id="@+id/btnName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="send_data"
+        android:text="Send Data"
+
+        />
+</LinearLayout>
