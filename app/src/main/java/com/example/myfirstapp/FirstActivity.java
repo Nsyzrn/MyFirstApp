@@ -4,37 +4,36 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.app.DatePickerDialog;
 import java.util.Calendar;
-import android.widget.DatePicker;
 
-//import android.widget.Spinner;
-//import java.util.ArrayList;
-//import java.util.List;
+import android.widget.DatePicker;
+import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
 
-    EditText etName, address, phoneNo, date;
+    EditText etName, etAddress, etPhoneNo,etEmail, etDate;
     DatePickerDialog datePickerDialog;
     Button btnName;
 
     public final static String MESSAGE_KEY = "com.example.MyFirstApp.message_key";
     public final static String MESSAGE_KEY_Date = "com.example.MyFirstApp.Date";
     public final static String MESSAGE_KEY_Address = "com.example.MyFirstApp.Address";
+    public final static String MESSAGE_KEY_Email = "com.example.MyFirstApp.Email";
     public final static String MESSAGE_KEY_Phone = "com.example.MyFirstApp.Phone";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        date = (EditText) findViewById(R.id.date);
+        etDate = (EditText) findViewById(R.id.etDate);
         // perform click event on edit text
-        date.setOnClickListener(new View.OnClickListener(){
+        etDate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 // calender class's instance and get current date , month and year from calender
@@ -50,8 +49,7 @@ public class FirstActivity extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
-                                date.setText(dayOfMonth + "/"
-                                        + (monthOfYear + 1) + "/" + year);
+                                etDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                             }
                         }, mYear, mMonth, mDay);
@@ -59,29 +57,35 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
         }
-    public void send_data(View view)
-    {
+    public void send_data(View view) {
         etName = findViewById(R.id.etName);
         btnName = findViewById(R.id.btnName);
-        date = findViewById(R.id.date);
-        address = findViewById(R.id.address);
-        phoneNo = findViewById(R.id.phoneNo);
-
+        etDate = findViewById(R.id.etDate);
+        etAddress = findViewById(R.id.etAddress);
+        etEmail = findViewById(R.id.etEmail);
+        etPhoneNo = findViewById(R.id.etPhoneNo);
 
         String message = etName.getText().toString();
-        String message1 = date.getText().toString();
-        String message2 = address.getText().toString();
-        String message3 = phoneNo.getText().toString();
+        String message1 = etDate.getText().toString();
+        String message2 = etAddress.getText().toString();
+        String message3 = etEmail.getText().toString();
+        String message4 = etPhoneNo.getText().toString();
 
-        Intent intent = new Intent(this, SecondActivity.class);
+        if (!MESSAGE_KEY_Email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(message3).matches()) {
 
-        intent.putExtra(MESSAGE_KEY, message);
-        intent.putExtra(MESSAGE_KEY_Date, message1);
-        intent.putExtra(MESSAGE_KEY_Address, message2);
-        intent.putExtra(MESSAGE_KEY_Phone, message3);
+            Toast.makeText(this,"Successful Send!", Toast.LENGTH_SHORT).show();
 
+            Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 
-        startActivity(intent);
+            intent.putExtra(MESSAGE_KEY, message);
+            intent.putExtra(MESSAGE_KEY_Date, message1);
+            intent.putExtra(MESSAGE_KEY_Address, message2);
+            intent.putExtra(MESSAGE_KEY_Email, message3);
+            intent.putExtra(MESSAGE_KEY_Phone, message4);
 
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Invalid Email Address!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

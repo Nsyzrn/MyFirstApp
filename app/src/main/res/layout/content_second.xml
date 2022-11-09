@@ -3,38 +3,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bgg" >
+
+    <ImageView
+        android:id="@+id/ivUser"
+        android:layout_width="153dp"
+        android:layout_height="149dp"
+        android:layout_gravity="center"
+        android:src="@drawable/iconcat" />
 
     <TextView
         android:id="@+id/tvUserName"
-        android:layout_width="match_parent"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_gravity="center"
-
-        />
+        android:layout_marginTop="30dp" />
 
     <TextView
-        android:id="@+id/date"
-        android:layout_width="match_parent"
+        android:id="@+id/tvDate"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_gravity="center"
+        android:layout_marginTop="30dp" />
 
-        />
     <TextView
         android:id="@+id/tvAddress"
-        android:layout_width="match_parent"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_gravity="center"
+        android:layout_marginTop="30dp" />
 
-        />
-
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:id="@+id/tvPhone"
-        android:layout_width="match_parent"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_gravity="center"
-
-        />
+        android:layout_marginTop="30dp" />
 
 </LinearLayout>

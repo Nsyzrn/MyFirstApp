@@ -1,68 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bgg"
     tools:context=".FirstActivity">
+
+    <ImageView
+        android:id="@+id/ivUser"
+        android:layout_width="153dp"
+        android:layout_height="149dp"
+        android:layout_gravity="center"
+        android:src="@drawable/iconcat" />
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="match_parent"
+        android:layout_width="279dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/border"
+        android:drawableLeft="@drawable/person"
         android:ems="10"
-        android:hint="Your Name"
+        android:hint="  Your Name"
         android:inputType="text"
-        />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select Your Birth Date"
-        android:textSize="19sp"
-        />
+        android:minHeight="48dp"
+        android:padding="7dp" />
 
     <EditText
-        android:id="@+id/date"
-        android:layout_width="156dp"
+        android:id="@+id/etDate"
+        android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="#d4d4d4"
-        android:hint="Select Date"
-        android:padding="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        android:drawableLeft="@drawable/love"
+        android:hint="  Select Your Birth Date"
+        android:padding="7dp"
         android:textColor="#895737"
         android:textColorHint="#895737"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/address"
-        android:layout_width="match_parent"
+        android:id="@+id/etAddress"
+        android:layout_width="279dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:ems="10"
+        android:hint="  Your Address"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Your Address"
-         />
+        android:background="@drawable/border"
+        android:drawableLeft="@drawable/home"
+        android:padding="7dp" />
 
     <EditText
-        android:id="@+id/phoneNo"
-        android:layout_width="match_parent"
+        android:id="@+id/etEmail"
+        android:layout_width="281dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:ems="10"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/border"
+        android:drawableLeft="@drawable/email"
+        android:hint="  Your Email"
+        android:padding="7dp" />
+
+    <EditText
+        android:id="@+id/etPhoneNo"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="  Your Phone Number"
         android:inputType="number"
         android:minHeight="48dp"
-        android:hint="Your Phone Number" />
+        android:background="@drawable/border"
+        android:drawableLeft="@drawable/phone"
+        android:padding="7dp" />
 
     <Button
         android:id="@+id/btnName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center"
+        android:background="@drawable/border"
         android:onClick="send_data"
-        android:text="Send Data"
-
-        />
+        android:text="Send Data" />
 </LinearLayout>
